@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        background-color: cadetblue;
+    }
+
+    #container {
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    #container img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+     
+    }
+    #container i{
+        font-size: 70px;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0);
+        opacity: 0;
+        transition: all ease 0.4s;
+    }
+
+</style>
+
+<body>
+    <div id="container">
+        <img src="https://images.pexels.com/photos/1468379/pexels-photo-1468379.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="">
+            <i class="ri-heart-3-fill"></i>
+    </div>
+</body>
+<script>
+    let con=document.querySelector("#container");
+    let icon=document.querySelector("i")
+    con.addEventListener("dblclick",function(){
+        icon.style.transform='translate(-50%,-50%) scale(1)'
+        icon.style.opacity=0.8;
+        icon.style.color="red"
+        setTimeout(function(){
+            // icon.style.transform='translate(-50%,-50%) scale(0)'
+            icon.style.opacity=0;
+        },1000)
+    })
+</script>
+</html>
